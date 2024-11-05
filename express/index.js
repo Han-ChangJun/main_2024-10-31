@@ -1,6 +1,7 @@
 import express from "express";
 
 const app = express();
+app.use(express.json());
 app.listen(8000, () => {
   console.log("서버시작!");
 });
@@ -22,4 +23,7 @@ app.get("/:id", (req) => {
   console.log(req.params);
   const { id } = req.params;
   console.log(id);
+});
+app.post("/hello", () => {
+  console.log("hello post호출 요청");
 });
