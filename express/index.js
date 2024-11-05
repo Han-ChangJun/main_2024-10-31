@@ -27,3 +27,9 @@ app.get("/:id", (req) => {
 app.post("/hello", () => {
   console.log("hello post호출 요청");
 });
+app.post("/post-req", (req) => {
+  console.log(req.body);
+  console.log(req.body.name);
+  const { name, age } = req.body;
+  console.log(`nameL:${name}, age:${age}`);
+});
