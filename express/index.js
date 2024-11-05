@@ -11,6 +11,11 @@ app.get("/", () => {
 app.get("/hello", () => {
   console.log("hello 주소요청");
 });
+app.get("/qs", (req) => {
+  console.log(req.query);
+  const { p1, p2 } = req.query;
+  console.log(`p1: ${p1},p2:${p2}`);
+});
 
 //board/10 , product/6
 app.get("/:id", (req) => {
